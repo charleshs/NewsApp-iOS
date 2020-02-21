@@ -41,11 +41,16 @@ class HeadlineBannerViewController: UIViewController {
     // MARK: - Private Methods
     private func fetchData() {
         
-        APIService().fetchHeadlines { (result) in
-            if let headlines = try? result.get() {
-                DispatchQueue.main.async {
-                    self.headlineItems.append(contentsOf: headlines)
-                }
+        let dataProvider = HeadlineProvider(category: .none)
+        
+        dataProvider.fetchHeadlines { [weak self] (result) in
+            
+            switch result {
+            case .failure(let error):
+                print(error)
+                
+            case .success(let headlines):
+                self?.headlineItems = headlines
             }
         }
     }

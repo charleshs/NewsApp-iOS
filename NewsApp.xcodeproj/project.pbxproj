@@ -32,6 +32,8 @@
 		D38AC7BE24003BD0001E0D06 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7BD24003BD0001E0D06 /* UIScreen+Extension.swift */; };
 		D38AC7DD24004276001E0D06 /* HeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7DC24004276001E0D06 /* HeadlineCell.swift */; };
 		D38AC7E22400446D001E0D06 /* KingfisherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7E12400446D001E0D06 /* KingfisherWrapper.swift */; };
+		D38AC7E524005A3D001E0D06 /* HeadlineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7E424005A3D001E0D06 /* HeadlineRequest.swift */; };
+		D38AC7E724005B20001E0D06 /* HeadlineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7E624005B20001E0D06 /* HeadlineProvider.swift */; };
 		DCA208DCD9FFAB2813B2F8EF /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA6D9626E2531CE030EB77D /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,8 @@
 		D38AC7BD24003BD0001E0D06 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		D38AC7DC24004276001E0D06 /* HeadlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCell.swift; sourceTree = "<group>"; };
 		D38AC7E12400446D001E0D06 /* KingfisherWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherWrapper.swift; sourceTree = "<group>"; };
+		D38AC7E424005A3D001E0D06 /* HeadlineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineRequest.swift; sourceTree = "<group>"; };
+		D38AC7E624005B20001E0D06 /* HeadlineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineProvider.swift; sourceTree = "<group>"; };
 		D8CB819C979961FB79D78D88 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		D98FE02FC278E230163A7681 /* Pods_NewsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -187,6 +191,7 @@
 				D38AC7AA24003BA3001E0D06 /* Helper+Extension */,
 				D38AC75A24002A78001E0D06 /* Model */,
 				D38AC75D24002C57001E0D06 /* Networking */,
+				D38AC7E3240059E9001E0D06 /* APIService */,
 				D38AC724240027E5001E0D06 /* AppDelegate.swift */,
 				D38AC72D240027E6001E0D06 /* Assets.xcassets */,
 				D38AC72F240027E6001E0D06 /* LaunchScreen.storyboard */,
@@ -226,7 +231,6 @@
 		D38AC75D24002C57001E0D06 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D38AC75624002A2C001E0D06 /* APIService.swift */,
 				D38AC760240031EB001E0D06 /* HTTPService.swift */,
 			);
 			path = Networking;
@@ -288,6 +292,16 @@
 				D38AC7E12400446D001E0D06 /* KingfisherWrapper.swift */,
 			);
 			path = ThirdPartyWrapper;
+			sourceTree = "<group>";
+		};
+		D38AC7E3240059E9001E0D06 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				D38AC75624002A2C001E0D06 /* APIService.swift */,
+				D38AC7E424005A3D001E0D06 /* HeadlineRequest.swift */,
+				D38AC7E624005B20001E0D06 /* HeadlineProvider.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,9 +532,11 @@
 				D38AC7BA24003BBC001E0D06 /* IndentedTextField.swift in Sources */,
 				D38AC729240027E5001E0D06 /* HeadlineBannerViewController.swift in Sources */,
 				D38AC7E22400446D001E0D06 /* KingfisherWrapper.swift in Sources */,
+				D38AC7E524005A3D001E0D06 /* HeadlineRequest.swift in Sources */,
 				D38AC725240027E5001E0D06 /* AppDelegate.swift in Sources */,
 				D38AC7B524003BBC001E0D06 /* UIView+Extension.swift in Sources */,
 				D38AC7B424003BBC001E0D06 /* UITableView+Extension.swift in Sources */,
+				D38AC7E724005B20001E0D06 /* HeadlineProvider.swift in Sources */,
 				D38AC7B624003BBC001E0D06 /* CellRegistrator.swift in Sources */,
 				D38AC761240031EB001E0D06 /* HTTPService.swift in Sources */,
 				D38AC7BE24003BD0001E0D06 /* UIScreen+Extension.swift in Sources */,
