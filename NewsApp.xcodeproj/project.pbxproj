@@ -42,6 +42,8 @@
 		D38AC7FA2400F469001E0D06 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7F92400F469001E0D06 /* BaseCollectionViewCell.swift */; };
 		D38AC7FC24010107001E0D06 /* CategoryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7FB24010107001E0D06 /* CategoryBrowserViewController.swift */; };
 		D38AC7FE240101C8001E0D06 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7FD240101C8001E0D06 /* CategoryCell.swift */; };
+		D38AC80124012E2C001E0D06 /* NewsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */; };
+		D38AC80424013245001E0D06 /* BaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80324013245001E0D06 /* BaseNavController.swift */; };
 		DCA208DCD9FFAB2813B2F8EF /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA6D9626E2531CE030EB77D /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		D38AC7F92400F469001E0D06 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		D38AC7FB24010107001E0D06 /* CategoryBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBrowserViewController.swift; sourceTree = "<group>"; };
 		D38AC7FD240101C8001E0D06 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleViewController.swift; sourceTree = "<group>"; };
+		D38AC80324013245001E0D06 /* BaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavController.swift; sourceTree = "<group>"; };
 		D8CB819C979961FB79D78D88 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		D98FE02FC278E230163A7681 /* Pods_NewsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -273,8 +277,10 @@
 		D38AC7D924004244001E0D06 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D38AC8022401321D001E0D06 /* Base */,
 				D38AC7F42400EB35001E0D06 /* BaseViews */,
 				D38AC7DA24004250001E0D06 /* Home */,
+				D38AC7FF240129EF001E0D06 /* Article */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -334,6 +340,22 @@
 				D38AC7F92400F469001E0D06 /* BaseCollectionViewCell.swift */,
 			);
 			path = BaseViews;
+			sourceTree = "<group>";
+		};
+		D38AC7FF240129EF001E0D06 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
+		D38AC8022401321D001E0D06 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D38AC80324013245001E0D06 /* BaseNavController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,7 +582,9 @@
 			files = (
 				D38AC7B724003BBC001E0D06 /* UIImageView+Extension.swift in Sources */,
 				D38AC7DD24004276001E0D06 /* BannerGalleryCell.swift in Sources */,
+				D38AC80124012E2C001E0D06 /* NewsArticleViewController.swift in Sources */,
 				D38AC7F62400EB48001E0D06 /* BaseTableViewCell.swift in Sources */,
+				D38AC80424013245001E0D06 /* BaseNavController.swift in Sources */,
 				D38AC7FE240101C8001E0D06 /* CategoryCell.swift in Sources */,
 				D38AC7BA24003BBC001E0D06 /* IndentedTextField.swift in Sources */,
 				D38AC729240027E5001E0D06 /* BannerGalleryViewController.swift in Sources */,

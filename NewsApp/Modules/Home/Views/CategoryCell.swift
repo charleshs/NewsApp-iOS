@@ -10,6 +10,12 @@ import UIKit
 
 class CategoryCell: BaseCollectionViewCell {
     
+    override var isSelected: Bool {
+        didSet {
+            categoryLabel.textColor = isSelected ? .red : .white
+        }
+    }
+    
     private let categoryLabel = UILabel(text: "",
                                         font: .systemFont(ofSize: 14, weight: .medium),
                                         textColor: .white,

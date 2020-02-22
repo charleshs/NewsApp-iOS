@@ -27,6 +27,7 @@ class CategoryBrowserViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: self.cellPadding,
                                            bottom: 0, right: self.cellPadding)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.allowsMultipleSelection = false
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.csRegisterCell(classType: CategoryCell.self)
@@ -45,6 +46,9 @@ class CategoryBrowserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryCollectionView.selectItem(at: IndexPath(item: 0, section: 0),
+                                          animated: true,
+                                          scrollPosition: .centeredHorizontally)
     }
     
     override func viewDidLayoutSubviews() {
@@ -87,6 +91,7 @@ extension CategoryBrowserViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         let category = items[indexPath.item]
         delegate?.didSelectCategory(self, with: category)
     }

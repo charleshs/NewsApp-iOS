@@ -31,14 +31,6 @@ class ArticleListViewController: UIViewController {
         return tableView
     }()
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
     convenience init(dataProvider: HeadlineProvider) {
         self.init()
         self.dataProvider = dataProvider

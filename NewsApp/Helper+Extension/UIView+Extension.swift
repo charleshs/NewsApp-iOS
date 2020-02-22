@@ -137,6 +137,13 @@ extension UIView {
         }
     }
     
+    func fillToSafeArea() {
+        
+        guard let guide = superview?.safeAreaLayoutGuide else { return }
+        
+        anchor(top: guide.topAnchor, leading: guide.leadingAnchor, bottom: guide.bottomAnchor, trailing: guide.trailingAnchor, padding: .zero, widthConstant: 0, heightConstant: 0)
+    }
+    
     /// Add anchors from any side of the current view into the specified anchors and returns the newly added constraints.
     @discardableResult
     func anchor(
@@ -179,6 +186,11 @@ extension UIView {
         anchors.forEach({$0.isActive = true})
         
         return anchors
+    }
+    
+    func anchorSuperview(equalPadding padding: CGFloat) {
+        
+        anchorSuperview(padding: UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding))
     }
     
     func anchorSuperview(padding: UIEdgeInsets) {
