@@ -1,5 +1,5 @@
 //
-//  HeadlineCell.swift
+//  BannerGalleryCell.swift
 //  NewsApp
 //
 //  Created by Kai-Ta Hsieh on 2020/2/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeadlineCell: UICollectionViewCell {
+class BannerGalleryCell: BaseCollectionViewCell {
     
     let gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
@@ -27,13 +27,9 @@ class HeadlineCell: UICollectionViewCell {
                             numberOfLines: 2)
         return label
     }()
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        gradientLayer.frame = contentView.bounds
-    }
-    
-    private func commonInit() {
+
+    override func commonInit() {
+        super.commonInit()
         
         contentView.addSubview(imageView)
         imageView.fillToSuperview()
@@ -50,13 +46,13 @@ class HeadlineCell: UICollectionViewCell {
                           heightConstant: 0)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = contentView.bounds
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        commonInit()
+    func updateCell(_ headline: Headline) {
+        imageView.loadImage(headline.urlImage)
+        titleLabel.text = headline.title
     }
 }

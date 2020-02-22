@@ -14,6 +14,5 @@ struct Source: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case name
-        
     }
 }

@@ -1,5 +1,5 @@
 //
-//  HeadlineBannerViewController.swift
+//  BannerGalleryViewController.swift
 //  NewsApp
 //
 //  Created by Kai-Ta Hsieh on 2020/2/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeadlineBannerViewController: UIViewController {
+class BannerGalleryViewController: UIViewController {
     
     var headlineItems: [Headline] = [] {
         didSet {
@@ -24,17 +24,19 @@ class HeadlineBannerViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.csRegisterCell(classType: HeadlineCell.self)
-        collectionView.backgroundColor = .lightGray
+        collectionView.csRegisterCell(classType: BannerGalleryCell.self)
         collectionView.isPagingEnabled = true
         return collectionView
     }()
     
     // MARK: - ViewController Life Cycle
+    override func loadView() {
+        super.loadView()
+        setupViews()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupViews()
         fetchData()
     }
     
@@ -43,7 +45,7 @@ class HeadlineBannerViewController: UIViewController {
         
         let dataProvider = HeadlineProvider(category: .none)
         
-        dataProvider.fetchHeadlines { [weak self] (result) in
+        dataProvider.fetchHeadlines { [weak self] result in
             
             switch result {
             case .failure(let error):
@@ -57,19 +59,13 @@ class HeadlineBannerViewController: UIViewController {
     
     private func setupViews() {
         
-        view.backgroundColor = .white
         view.addSubview(bannerCollectionView)
-        bannerCollectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
-                                    leading: view.safeAreaLayoutGuide.leadingAnchor,
-                                    bottom: nil,
-                                    trailing: view.safeAreaLayoutGuide.trailingAnchor,
-                                    padding: .zero,
-                                    widthConstant: 0, heightConstant: 300)
+        bannerCollectionView.fillToSuperview()
     }
 }
 
 // MARK: - UICollectionViewDataSource
-extension HeadlineBannerViewController: UICollectionViewDataSource {
+extension BannerGalleryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -80,26 +76,22 @@ extension HeadlineBannerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeadlineCell.reuseIdentifier, for: indexPath)
-        guard let headlineCell = cell as? HeadlineCell else { return cell }
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:BannerGalleryCell.reuseIdentifier,
+                                                      for: indexPath)
+        guard let headlineCell = cell as? BannerGalleryCell else { return cell }
         let headline = headlineItems[indexPath.item]
-        headlineCell.titleLabel.text = headline.title
-        if let url = headline.urlImage {
-            headlineCell.imageView.loadImage(url)
-        }
-        
+        headlineCell.updateCell(headline)
         return headlineCell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension HeadlineBannerViewController: UICollectionViewDelegateFlowLayout {
+extension BannerGalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: UIScreen.width, height: 300)
+        return CGSize(width: collectionView.width, height: collectionView.height)
     }
 }

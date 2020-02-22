@@ -25,7 +25,7 @@ class HTTPService {
         return session
     }()
     
-    func request(url: URL, completion: @escaping (Result<Data, HTTPServiceError>) -> Void) {
+    func request(_ url: URL, completion: @escaping (Result<Data, HTTPServiceError>) -> Void) {
         
         session.dataTask(with: url) { (data, response, error) in
             

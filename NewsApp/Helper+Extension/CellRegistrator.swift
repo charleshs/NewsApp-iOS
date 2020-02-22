@@ -1,5 +1,5 @@
 //
-//  CellConfigurer.swift
+//  CellRegistrator.swift
 //  CSLibrary
 //
 //  Created by Kai-Ta Hsieh on 2020/2/10.

@@ -18,16 +18,17 @@ class APIService {
     
     func executeRequest(completion: @escaping (Result<[Headline], Error>) -> Void) {
         
-        guard let url = request.requestURL else { return }
+        guard let url = request.requestURL else {
+            return
+        }
         
-        HTTPService.shared.request(url: url) { (result) in
+        HTTPService.shared.request(url) { (result) in
             
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
-                
             case .success(let data):
                 do {
                     let parsedResult = try JSONDecoder().decode(HeadlineParser.self, from: data)

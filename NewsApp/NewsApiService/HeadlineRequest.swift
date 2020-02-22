@@ -8,17 +8,6 @@
 
 import Foundation
 
-enum SubCategory: String {
-    
-    case none
-    case business
-    case entertainment
-    case health
-    case science
-    case sports
-    case technology
-}
-
 struct HeadlineRequest {
     
     var requestURL: URL? {

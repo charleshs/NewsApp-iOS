@@ -8,25 +8,14 @@
 
 import Foundation
 
-struct HeadlineParser: Decodable {
-    
-    var status: String
-    var totalResults: Int
-    var articles: [Headline]
-    
-    enum CodingKeys: String, CodingKey {
-        case status, totalResults, articles
-    }
-}
-
 struct Headline: Decodable {
     
     var source: Source
     var author: String?
     var title: String
     var description: String
-    var url: URL?
-    var urlImage: URL?
+    var url: String?
+    var urlImage: String?
     var published: String
     var content: String?
     
