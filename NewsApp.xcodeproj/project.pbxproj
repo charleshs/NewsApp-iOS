@@ -40,6 +40,8 @@
 		D38AC7F62400EB48001E0D06 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7F52400EB48001E0D06 /* BaseTableViewCell.swift */; };
 		D38AC7F82400EEF0001E0D06 /* HomeContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7F72400EEF0001E0D06 /* HomeContainerViewController.swift */; };
 		D38AC7FA2400F469001E0D06 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7F92400F469001E0D06 /* BaseCollectionViewCell.swift */; };
+		D38AC7FC24010107001E0D06 /* CategoryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7FB24010107001E0D06 /* CategoryBrowserViewController.swift */; };
+		D38AC7FE240101C8001E0D06 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7FD240101C8001E0D06 /* CategoryCell.swift */; };
 		DCA208DCD9FFAB2813B2F8EF /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA6D9626E2531CE030EB77D /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		D38AC7F52400EB48001E0D06 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		D38AC7F72400EEF0001E0D06 /* HomeContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerViewController.swift; sourceTree = "<group>"; };
 		D38AC7F92400F469001E0D06 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		D38AC7FB24010107001E0D06 /* CategoryBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBrowserViewController.swift; sourceTree = "<group>"; };
+		D38AC7FD240101C8001E0D06 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		D8CB819C979961FB79D78D88 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		D98FE02FC278E230163A7681 /* Pods_NewsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -289,6 +293,7 @@
 			children = (
 				D38AC7DC24004276001E0D06 /* BannerGalleryCell.swift */,
 				D38AC7F22400EAE4001E0D06 /* ArticleListCell.swift */,
+				D38AC7FD240101C8001E0D06 /* CategoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				D38AC7F72400EEF0001E0D06 /* HomeContainerViewController.swift */,
 				D38AC728240027E5001E0D06 /* BannerGalleryViewController.swift */,
 				D38AC7F02400E903001E0D06 /* ArticleListViewController.swift */,
+				D38AC7FB24010107001E0D06 /* CategoryBrowserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				D38AC7B724003BBC001E0D06 /* UIImageView+Extension.swift in Sources */,
 				D38AC7DD24004276001E0D06 /* BannerGalleryCell.swift in Sources */,
 				D38AC7F62400EB48001E0D06 /* BaseTableViewCell.swift in Sources */,
+				D38AC7FE240101C8001E0D06 /* CategoryCell.swift in Sources */,
 				D38AC7BA24003BBC001E0D06 /* IndentedTextField.swift in Sources */,
 				D38AC729240027E5001E0D06 /* BannerGalleryViewController.swift in Sources */,
 				D38AC7E22400446D001E0D06 /* KingfisherWrapper.swift in Sources */,
@@ -571,6 +578,7 @@
 				D38AC761240031EB001E0D06 /* HTTPService.swift in Sources */,
 				D38AC7BE24003BD0001E0D06 /* UIScreen+Extension.swift in Sources */,
 				D38AC7F32400EAE4001E0D06 /* ArticleListCell.swift in Sources */,
+				D38AC7FC24010107001E0D06 /* CategoryBrowserViewController.swift in Sources */,
 				D38AC7BB24003BBC001E0D06 /* UIWindow+Extension.swift in Sources */,
 				D38AC7B924003BBC001E0D06 /* UILabel+Extension.swift in Sources */,
 				D38AC75724002A2C001E0D06 /* APIService.swift in Sources */,

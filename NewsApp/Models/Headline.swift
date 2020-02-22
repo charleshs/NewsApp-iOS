@@ -10,13 +10,13 @@ import Foundation
 
 struct Headline: Decodable {
     
-    var source: Source
+    var source: Source?
     var author: String?
-    var title: String
-    var description: String
+    var title: String?
+    var description: String?
     var url: String?
     var urlImage: String?
-    var published: String
+    var published: String?
     var content: String?
     
     enum CodingKeys: String, CodingKey {

@@ -181,6 +181,15 @@ extension UIView {
         return anchors
     }
     
+    func anchorSuperview(padding: UIEdgeInsets) {
+        
+        guard let superview = superview else { return }
+        
+        anchor(top: superview.topAnchor, leading: superview.leadingAnchor,
+               bottom: superview.bottomAnchor, trailing: superview.trailingAnchor,
+               padding: padding, widthConstant: 0, heightConstant: 0)
+    }
+    
     func anchorCenterXToSuperview(constant: CGFloat = 0) {
         
         translatesAutoresizingMaskIntoConstraints = false

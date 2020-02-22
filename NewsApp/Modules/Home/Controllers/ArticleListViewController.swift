@@ -16,7 +16,11 @@ class ArticleListViewController: UIViewController {
         }
     }
     
-    private var dataProvider: HeadlineProvider?
+    var dataProvider: HeadlineProvider! {
+        didSet {
+            fetchData()
+        }
+    }
     
     private lazy var listTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -71,12 +75,14 @@ class ArticleListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension ArticleListViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         
         return headlineItems.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:ArticleListCell.reuseIdentifier,
                                                  for: indexPath)

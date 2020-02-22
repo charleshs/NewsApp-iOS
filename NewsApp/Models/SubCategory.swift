@@ -21,7 +21,7 @@ enum SubCategory: String {
     var localizedTitle: String {
         switch self {
         case .none:
-            return ""
+            return "焦點頭條"
         case .business:
             return "商業金融"
         case .entertainment:
