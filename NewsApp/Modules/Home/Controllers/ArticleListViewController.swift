@@ -8,8 +8,15 @@
 
 import UIKit
 
-class ArticleListViewController: UIViewController {
+protocol ArticleListViewControllerDelegate: AnyObject {
+    
+    func didSelectItem(_ controller: ArticleListViewController, headline: Headline)
+}
 
+class ArticleListViewController: BaseViewController {
+
+    weak var delegate: ArticleListViewControllerDelegate?
+    
     var headlineItems: [Headline] = [] {
         didSet {
             listTableView.reloadData()
@@ -23,11 +30,10 @@ class ArticleListViewController: UIViewController {
     }
     
     private lazy var listTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView(style: .plain, separatorStyle: .none, bgColor: .clear)
+        tableView.csRegisterCell(classType: ArticleListCell.self)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.csRegisterCell(classType: ArticleListCell.self)
-        tableView.backgroundColor = .black
         return tableView
     }()
     
@@ -88,4 +94,9 @@ extension ArticleListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ArticleListViewController:  UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let headline = self.headlineItems[indexPath.row]
+        delegate?.didSelectItem(self, headline: headline)
+    }
 }

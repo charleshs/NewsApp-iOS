@@ -44,6 +44,11 @@
 		D38AC7FE240101C8001E0D06 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7FD240101C8001E0D06 /* CategoryCell.swift */; };
 		D38AC80124012E2C001E0D06 /* NewsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */; };
 		D38AC80424013245001E0D06 /* BaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80324013245001E0D06 /* BaseNavController.swift */; };
+		D38AC80824013A8C001E0D06 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80724013A8C001E0D06 /* HomeCoordinator.swift */; };
+		D38AC80A24013AA8001E0D06 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80924013AA8001E0D06 /* BaseCoordinator.swift */; };
+		D38AC80E24017A31001E0D06 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80D24017A31001E0D06 /* BaseViewController.swift */; };
+		D38AC81424018404001E0D06 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC81324018404001E0D06 /* UICollectionView+Extension.swift */; };
+		D38AC8162401866C001E0D06 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC8152401866C001E0D06 /* LoadingViewController.swift */; };
 		DCA208DCD9FFAB2813B2F8EF /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA6D9626E2531CE030EB77D /* Pods_NewsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +131,11 @@
 		D38AC7FD240101C8001E0D06 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleViewController.swift; sourceTree = "<group>"; };
 		D38AC80324013245001E0D06 /* BaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavController.swift; sourceTree = "<group>"; };
+		D38AC80724013A8C001E0D06 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		D38AC80924013AA8001E0D06 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		D38AC80D24017A31001E0D06 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D38AC81324018404001E0D06 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		D38AC8152401866C001E0D06 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D8CB819C979961FB79D78D88 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		D98FE02FC278E230163A7681 /* Pods_NewsAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -267,6 +277,7 @@
 				D38AC7AE24003BBC001E0D06 /* UIImageView+Extension.swift */,
 				D38AC7B024003BBC001E0D06 /* UILabel+Extension.swift */,
 				D38AC7AB24003BBC001E0D06 /* UITableView+Extension.swift */,
+				D38AC81324018404001E0D06 /* UICollectionView+Extension.swift */,
 				D38AC7AC24003BBC001E0D06 /* UIView+Extension.swift */,
 				D38AC7B224003BBC001E0D06 /* UIWindow+Extension.swift */,
 				D38AC7BD24003BD0001E0D06 /* UIScreen+Extension.swift */,
@@ -290,6 +301,7 @@
 			children = (
 				D38AC7DF240042BB001E0D06 /* Controllers */,
 				D38AC7DB2400425C001E0D06 /* Views */,
+				D38AC80724013A8C001E0D06 /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -354,6 +366,9 @@
 			isa = PBXGroup;
 			children = (
 				D38AC80324013245001E0D06 /* BaseNavController.swift */,
+				D38AC80D24017A31001E0D06 /* BaseViewController.swift */,
+				D38AC8152401866C001E0D06 /* LoadingViewController.swift */,
+				D38AC80924013AA8001E0D06 /* BaseCoordinator.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -580,11 +595,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38AC81424018404001E0D06 /* UICollectionView+Extension.swift in Sources */,
 				D38AC7B724003BBC001E0D06 /* UIImageView+Extension.swift in Sources */,
 				D38AC7DD24004276001E0D06 /* BannerGalleryCell.swift in Sources */,
+				D38AC80E24017A31001E0D06 /* BaseViewController.swift in Sources */,
 				D38AC80124012E2C001E0D06 /* NewsArticleViewController.swift in Sources */,
 				D38AC7F62400EB48001E0D06 /* BaseTableViewCell.swift in Sources */,
 				D38AC80424013245001E0D06 /* BaseNavController.swift in Sources */,
+				D38AC8162401866C001E0D06 /* LoadingViewController.swift in Sources */,
 				D38AC7FE240101C8001E0D06 /* CategoryCell.swift in Sources */,
 				D38AC7BA24003BBC001E0D06 /* IndentedTextField.swift in Sources */,
 				D38AC729240027E5001E0D06 /* BannerGalleryViewController.swift in Sources */,
@@ -595,6 +613,7 @@
 				D38AC7B524003BBC001E0D06 /* UIView+Extension.swift in Sources */,
 				D38AC7B424003BBC001E0D06 /* UITableView+Extension.swift in Sources */,
 				D38AC7FA2400F469001E0D06 /* BaseCollectionViewCell.swift in Sources */,
+				D38AC80A24013AA8001E0D06 /* BaseCoordinator.swift in Sources */,
 				D38AC7F82400EEF0001E0D06 /* HomeContainerViewController.swift in Sources */,
 				D38AC7E724005B20001E0D06 /* HeadlineProvider.swift in Sources */,
 				D38AC7B624003BBC001E0D06 /* CellRegistrator.swift in Sources */,
@@ -607,6 +626,7 @@
 				D38AC7B924003BBC001E0D06 /* UILabel+Extension.swift in Sources */,
 				D38AC75724002A2C001E0D06 /* APIService.swift in Sources */,
 				D38AC7EF2400E6F5001E0D06 /* HeadlineParser.swift in Sources */,
+				D38AC80824013A8C001E0D06 /* HomeCoordinator.swift in Sources */,
 				D38AC75C24002AD4001E0D06 /* Source.swift in Sources */,
 				D38AC75924002A74001E0D06 /* Headline.swift in Sources */,
 				D38AC7BC24003BBC001E0D06 /* Dictionary+Extension.swift in Sources */,
@@ -776,7 +796,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW9KY3R5BK;
 				INFOPLIST_FILE = NewsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -794,7 +816,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HW9KY3R5BK;
 				INFOPLIST_FILE = NewsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

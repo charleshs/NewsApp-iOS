@@ -13,24 +13,17 @@ protocol CategoryBrowserViewControllerDelegate: AnyObject {
     func didSelectCategory(_ controller: CategoryBrowserViewController, with category: SubCategory)
 }
 
-class CategoryBrowserViewController: UIViewController {
+class CategoryBrowserViewController: BaseViewController {
     
     weak var delegate: CategoryBrowserViewControllerDelegate?
     
     private let cellPadding: CGFloat = 16
     
     private lazy var categoryCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = self.cellPadding
-        layout.minimumLineSpacing = self.cellPadding
-        layout.sectionInset = UIEdgeInsets(top: 0, left: self.cellPadding,
-                                           bottom: 0, right: self.cellPadding)
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.allowsMultipleSelection = false
+        let collectionView = UICollectionView(direction: .horizontal, lineSpacing: self.cellPadding, interitemSpacing: self.cellPadding, pagingEnabled: false, bgColor: .clear)
+        collectionView.csRegisterCell(classType: CategoryCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.csRegisterCell(classType: CategoryCell.self)
         return collectionView
     }()
     
@@ -87,6 +80,11 @@ extension CategoryBrowserViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension CategoryBrowserViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 0, left: self.cellPadding, bottom: 0, right: self.cellPadding)
+    }
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {

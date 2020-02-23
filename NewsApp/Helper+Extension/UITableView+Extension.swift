@@ -28,6 +28,14 @@ extension UITableView {
 // MARK: - Methods
 extension UITableView {
     
+    convenience init(style: UITableView.Style = .plain,
+                     separatorStyle: UITableViewCell.SeparatorStyle = .none,
+                     bgColor: UIColor = .clear) {
+        self.init(frame: .zero, style: style)
+        self.separatorStyle = separatorStyle
+        self.backgroundColor = bgColor
+    }
+    
     /// IndexPath for last row in section.
     ///
     /// - Parameter section: section to get last row in.

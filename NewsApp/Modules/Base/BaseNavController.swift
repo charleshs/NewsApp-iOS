@@ -10,15 +10,10 @@ import UIKit
 
 class BaseNavController: UINavigationController {
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationBar.isHidden = true
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = false
+        setNavigationBarHidden(true, animated: false)
+        navigationBar.barTintColor = .init(white: 0.1, alpha: 1.0)
+        navigationBar.tintColor = .white
     }
 }

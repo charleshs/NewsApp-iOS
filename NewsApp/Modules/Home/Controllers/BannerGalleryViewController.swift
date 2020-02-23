@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BannerGalleryViewController: UIViewController {
+class BannerGalleryViewController: BaseViewController {
     
     var headlineItems: [Headline] = [] {
         didSet {
@@ -17,15 +17,10 @@ class BannerGalleryViewController: UIViewController {
     }
     
     private lazy var bannerCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(direction: .horizontal, lineSpacing: 0, interitemSpacing: 0, pagingEnabled: true, bgColor: .clear)
+        collectionView.csRegisterCell(classType: BannerGalleryCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.csRegisterCell(classType: BannerGalleryCell.self)
-        collectionView.isPagingEnabled = true
         return collectionView
     }()
     

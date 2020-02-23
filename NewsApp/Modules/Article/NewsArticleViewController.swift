@@ -9,41 +9,50 @@
 import UIKit
 import WebKit
 
-class NewsArticleViewController: UIViewController {
+class NewsArticleViewController: BaseViewController {
 
-    private lazy var webView: WKWebView = {
-        let config = WKWebViewConfiguration()
-        let view = WKWebView(frame: .zero, configuration: config)
-        return view
+    private lazy var articleTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .clear
+        return tableView
     }()
     
-    private var url: URL?
+    private var headline: Headline!
     
-    convenience init(urlString: String) {
+    convenience init(headline: Headline) {
         self.init()
-        self.url = URL(string: urlString)
+        self.headline = headline
     }
     
     // MARK: - ViewController Life Cycle
     override func loadView() {
         super.loadView()
-        setupWebView()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadWebView()
     }
     
     // MARK: - Private Methods
-    private func loadWebView() {
-        guard let url = url else { return }
-        let urlRequest = URLRequest(url: url)
-        webView.load(urlRequest)
+    private func setupViews() {
+        view.addSubview(articleTableView)
+        articleTableView.fillToSafeArea()
+    }
+}
+
+extension NewsArticleViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
     }
     
-    private func setupWebView() {
-        view.addSubview(webView)
-        webView.fillToSafeArea()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return .init()
     }
+}
+
+extension NewsArticleViewController: UITableViewDelegate {
+    
 }
