@@ -51,8 +51,8 @@ class BannerGalleryCell: BaseCollectionViewCell {
         gradientLayer.frame = contentView.bounds
     }
     
-    func updateCell(_ headline: Headline) {
-        imageView.loadImage(headline.urlImage)
-        titleLabel.text = headline.title
+    func updateCell(_ viewModel: BannerGalleryViewModelProtocol) {
+        imageView.loadImage(viewModel.imageLink)
+        titleLabel.text = viewModel.title
     }
 }

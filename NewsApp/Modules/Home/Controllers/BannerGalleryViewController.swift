@@ -10,7 +10,7 @@ import UIKit
 
 class BannerGalleryViewController: BaseViewController {
     
-    var headlineItems: [Headline] = [] {
+    var headlineItems: [BannerGalleryViewModelProtocol] = [] {
         didSet {
             bannerCollectionView.reloadData()
         }
@@ -47,7 +47,7 @@ class BannerGalleryViewController: BaseViewController {
                 print(error)
                 
             case .success(let headlines):
-                self?.headlineItems = headlines
+                self?.headlineItems = BannerGalleryViewModel.mapping(headlines)
             }
         }
     }
