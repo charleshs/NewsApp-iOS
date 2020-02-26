@@ -1,5 +1,5 @@
 //
-//  BaseCoordinator.swift
+//  Coordinator.swift
 //  NewsApp
 //
 //  Created by Kai-Ta Hsieh on 2020/2/22.
@@ -12,6 +12,7 @@ protocol Coordinator: AnyObject {
     
     var navigationController: UINavigationController { get set }
     var parentCoordinator: Coordinator? { get set }
+    var childCoordinators: [Coordinator] { get set }
     
     func start()
     func start(coordinator: Coordinator)
@@ -19,17 +20,7 @@ protocol Coordinator: AnyObject {
     func removeChildCoordinators()
 }
 
-class BaseCoordinator: Coordinator {
-
-    var navigationController = UINavigationController()
-    
-    var parentCoordinator: Coordinator?
-    
-    var childCoordinators: [Coordinator] = []
-    
-    func start() {
-        fatalError("Start method should be implemented")
-    }
+extension Coordinator {
     
     func start(coordinator: Coordinator) {
         self.childCoordinators.append(coordinator)

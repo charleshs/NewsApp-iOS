@@ -8,14 +8,19 @@
 
 import UIKit
 
-class HomeCoordinator: BaseCoordinator {
+class HomeCoordinator: Coordinator {
     
-    override init() {
-        super.init()
-        navigationController = BaseNavController()
+    var navigationController: UINavigationController
+    var parentCoordinator: Coordinator?
+    var childCoordinators: [Coordinator] = []
+    
+    init(navController: UINavigationController) {
+        self.navigationController = navController
     }
     
-    override func start() {
+    func start() {
         
+        let homeContainerVC = HomeContainerViewController()
+        navigationController.viewControllers = [homeContainerVC]
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 struct Source: Decodable {
     
-    var name: String
+    var name: String?
     
     enum CodingKeys: String, CodingKey {
         case name
