@@ -14,29 +14,29 @@ class ArticleListCell: BaseTableViewCell {
         let label = UILabel(text: "",
                             font: .systemFont(ofSize: 16, weight: .heavy),
                             textColor: .white,
-                            numberOfLines: 2)
+                            numberOfLines: 0)
         return label
     }()
     
     private let descLabel: UILabel = {
        let label = UILabel(text: "",
                            font: .systemFont(ofSize: 14, weight: .regular),
-                           textColor: .lightGray,
-                           numberOfLines: 3)
+                           textColor: .systemGray5,
+                           numberOfLines: 0)
         return label
     }()
     
     private let datetimeLabel: UILabel = {
        let label = UILabel(text: "",
                            font: .systemFont(ofSize: 14, weight: .regular),
-                           textColor: .lightGray)
+                           textColor: .systemGray5)
         return label
     }()
     
     private let sourceLabel: UILabel = {
         let label = UILabel(text: "",
                             font: .systemFont(ofSize: 14, weight: .regular),
-                            textColor: .lightGray)
+                            textColor: .systemGray5)
         return label
     }()
     
