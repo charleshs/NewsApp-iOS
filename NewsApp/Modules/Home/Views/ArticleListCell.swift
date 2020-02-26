@@ -59,10 +59,10 @@ class ArticleListCell: BaseTableViewCell {
         vStack.anchorSuperview(equalPadding: edgePadding)
     }
     
-    func updateCell(_ headline: Headline) {
-        titleLabel.text = headline.title
-        descLabel.text = headline.description
-        datetimeLabel.text = headline.published
-        sourceLabel.text = headline.source?.name
+    func updateCell(_ article: ArticleViewModelProtocol) {
+        titleLabel.text = article.title
+        descLabel.text = article.description
+        datetimeLabel.text = article.dateString
+        sourceLabel.text = article.sourceName
     }
 }

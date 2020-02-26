@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7C3AD0872406B13C00DF40EE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3AD0862406B13C00DF40EE /* AppCoordinator.swift */; };
 		7C3AD08A2406D19C00DF40EE /* BannerGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3AD0892406D19C00DF40EE /* BannerGalleryViewModel.swift */; };
+		7C3AD08C2406D68500DF40EE /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3AD08B2406D68500DF40EE /* DateManager.swift */; };
+		7C3AD08E2406DCB000DF40EE /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3AD08D2406DCB000DF40EE /* ArticleViewModel.swift */; };
 		99E2DE7D40E846CE275A8687 /* Pods_NewsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98FE02FC278E230163A7681 /* Pods_NewsAppTests.framework */; };
 		B7868E68A5994CF7CD7A4D02 /* Pods_NewsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145691C774B408B2017AB081 /* Pods_NewsAppUITests.framework */; };
 		D38AC725240027E5001E0D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC724240027E5001E0D06 /* AppDelegate.swift */; };
@@ -91,6 +93,8 @@
 		66017524A4506C7F9F07E80B /* Pods-NewsAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C3AD0862406B13C00DF40EE /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7C3AD0892406D19C00DF40EE /* BannerGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerGalleryViewModel.swift; sourceTree = "<group>"; };
+		7C3AD08B2406D68500DF40EE /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		7C3AD08D2406DCB000DF40EE /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		984024D7E2095822C4B71E8C /* Pods-NewsAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppUITests.release.xcconfig"; path = "Target Support Files/Pods-NewsAppUITests/Pods-NewsAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D38AC721240027E5001E0D06 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38AC724240027E5001E0D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7C3AD0892406D19C00DF40EE /* BannerGalleryViewModel.swift */,
+				7C3AD08D2406DCB000DF40EE /* ArticleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				D38AC7EC2400E6A9001E0D06 /* SubCategory.swift */,
 				D38AC75824002A74001E0D06 /* Headline.swift */,
 				D38AC75B24002AD4001E0D06 /* Source.swift */,
+				7C3AD08B2406D68500DF40EE /* DateManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 				D38AC729240027E5001E0D06 /* BannerGalleryViewController.swift in Sources */,
 				D38AC7E22400446D001E0D06 /* KingfisherWrapper.swift in Sources */,
 				D38AC7E524005A3D001E0D06 /* HeadlineRequest.swift in Sources */,
+				7C3AD08E2406DCB000DF40EE /* ArticleViewModel.swift in Sources */,
 				D38AC7ED2400E6A9001E0D06 /* SubCategory.swift in Sources */,
 				D38AC725240027E5001E0D06 /* AppDelegate.swift in Sources */,
 				D38AC7B524003BBC001E0D06 /* UIView+Extension.swift in Sources */,
@@ -628,6 +635,7 @@
 				D38AC7F12400E903001E0D06 /* ArticleListViewController.swift in Sources */,
 				D38AC761240031EB001E0D06 /* HTTPService.swift in Sources */,
 				7C3AD0872406B13C00DF40EE /* AppCoordinator.swift in Sources */,
+				7C3AD08C2406D68500DF40EE /* DateManager.swift in Sources */,
 				D38AC7BE24003BD0001E0D06 /* UIScreen+Extension.swift in Sources */,
 				D38AC7F32400EAE4001E0D06 /* ArticleListCell.swift in Sources */,
 				D38AC7FC24010107001E0D06 /* CategoryBrowserViewController.swift in Sources */,

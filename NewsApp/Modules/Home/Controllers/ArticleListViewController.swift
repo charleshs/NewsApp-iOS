@@ -10,14 +10,14 @@ import UIKit
 
 protocol ArticleListViewControllerDelegate: AnyObject {
     
-    func didSelectItem(_ controller: ArticleListViewController, headline: Headline)
+    func didSelectItem(_ controller: ArticleListViewController, article: ArticleViewModelProtocol)
 }
 
 class ArticleListViewController: BaseViewController {
 
     weak var delegate: ArticleListViewControllerDelegate?
     
-    var headlineItems: [Headline] = [] {
+    var articleItems: [ArticleViewModelProtocol] = [] {
         didSet {
             listTableView.reloadData()
         }
@@ -64,7 +64,7 @@ class ArticleListViewController: BaseViewController {
                 print(error)
                 
             case .success(let headlines):
-                self?.headlineItems = headlines
+                self?.articleItems = ArticleViewModel.mapping(headlines)
             }
         }
     }
@@ -76,17 +76,17 @@ extension ArticleListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
         
-        return headlineItems.count
+        return articleItems.count
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier:ArticleListCell.reuseIdentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListCell.reuseIdentifier,
                                                  for: indexPath)
         guard let articleCell = cell as? ArticleListCell else { return cell }
-        let headline = headlineItems[indexPath.item]
-        articleCell.updateCell(headline)
+        let article = articleItems[indexPath.item]
+        articleCell.updateCell(article)
         return articleCell
     }
 }
@@ -106,7 +106,7 @@ extension ArticleListViewController:  UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let headline = self.headlineItems[indexPath.row]
-        delegate?.didSelectItem(self, headline: headline)
+        let article = self.articleItems[indexPath.row]
+        delegate?.didSelectItem(self, article: article)
     }
 }

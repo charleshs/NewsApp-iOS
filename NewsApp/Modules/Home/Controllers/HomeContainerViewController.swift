@@ -122,7 +122,7 @@ extension HomeContainerViewController: CategoryBrowserViewControllerDelegate {
 
 extension HomeContainerViewController: ArticleListViewControllerDelegate {
     
-    func didSelectItem(_ controller: ArticleListViewController, headline: Headline) {
+    func didSelectItem(_ controller: ArticleListViewController, article: ArticleViewModelProtocol) {
         
     }
 }

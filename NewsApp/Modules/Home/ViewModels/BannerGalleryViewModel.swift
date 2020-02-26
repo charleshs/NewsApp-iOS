@@ -30,12 +30,11 @@ class BannerGalleryViewModel: BannerGalleryViewModelProtocol {
     
     init?(_ headline: Headline) {
         guard
-            let title = headline.title,
             let postLink = headline.url,
             let imageLink = headline.urlImage else {
                 return nil
         }
-        self.title = title
+        self.title = headline.title
         self.postLink = postLink
         self.imageLink = imageLink
     }
