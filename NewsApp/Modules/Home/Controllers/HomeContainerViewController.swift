@@ -123,6 +123,8 @@ extension HomeContainerViewController: CategoryBrowserViewControllerDelegate {
 extension HomeContainerViewController: ArticleListViewControllerDelegate {
     
     func didSelectItem(_ controller: ArticleListViewController, article: ArticleViewModelProtocol) {
-        
+        let urlString = article.postLink
+        let newsArticleVC = ArticleWebpageViewController(urlString: urlString)
+        navigationController?.pushViewController(newsArticleVC, animated: true)
     }
 }

@@ -44,7 +44,7 @@
 		D38AC7FA2400F469001E0D06 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7F92400F469001E0D06 /* BaseCollectionViewCell.swift */; };
 		D38AC7FC24010107001E0D06 /* CategoryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7FB24010107001E0D06 /* CategoryBrowserViewController.swift */; };
 		D38AC7FE240101C8001E0D06 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC7FD240101C8001E0D06 /* CategoryCell.swift */; };
-		D38AC80124012E2C001E0D06 /* NewsArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */; };
+		D38AC80124012E2C001E0D06 /* ArticleWebpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80024012E2C001E0D06 /* ArticleWebpageViewController.swift */; };
 		D38AC80424013245001E0D06 /* BaseNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80324013245001E0D06 /* BaseNavController.swift */; };
 		D38AC80824013A8C001E0D06 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80724013A8C001E0D06 /* HomeCoordinator.swift */; };
 		D38AC80A24013AA8001E0D06 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38AC80924013AA8001E0D06 /* Coordinator.swift */; };
@@ -133,7 +133,7 @@
 		D38AC7F92400F469001E0D06 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		D38AC7FB24010107001E0D06 /* CategoryBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBrowserViewController.swift; sourceTree = "<group>"; };
 		D38AC7FD240101C8001E0D06 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticleViewController.swift; sourceTree = "<group>"; };
+		D38AC80024012E2C001E0D06 /* ArticleWebpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebpageViewController.swift; sourceTree = "<group>"; };
 		D38AC80324013245001E0D06 /* BaseNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavController.swift; sourceTree = "<group>"; };
 		D38AC80724013A8C001E0D06 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D38AC80924013AA8001E0D06 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -370,7 +370,7 @@
 		D38AC7FF240129EF001E0D06 /* Article */ = {
 			isa = PBXGroup;
 			children = (
-				D38AC80024012E2C001E0D06 /* NewsArticleViewController.swift */,
+				D38AC80024012E2C001E0D06 /* ArticleWebpageViewController.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -613,7 +613,7 @@
 				D38AC7B724003BBC001E0D06 /* UIImageView+Extension.swift in Sources */,
 				D38AC7DD24004276001E0D06 /* BannerGalleryCell.swift in Sources */,
 				D38AC80E24017A31001E0D06 /* BaseViewController.swift in Sources */,
-				D38AC80124012E2C001E0D06 /* NewsArticleViewController.swift in Sources */,
+				D38AC80124012E2C001E0D06 /* ArticleWebpageViewController.swift in Sources */,
 				D38AC7F62400EB48001E0D06 /* BaseTableViewCell.swift in Sources */,
 				D38AC80424013245001E0D06 /* BaseNavController.swift in Sources */,
 				D38AC8162401866C001E0D06 /* LoadingViewController.swift in Sources */,
