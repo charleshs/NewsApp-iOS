@@ -11,7 +11,6 @@ import UIKit
 // MARK: - Properties
 extension UIView {
     
-    /// Get view's parent view controller
     var parentViewController: UIViewController? {
         
         weak var parentResponder: UIResponder? = self
@@ -85,12 +84,6 @@ extension UIView {
 // MARK: - Methods
 extension UIView {
     
-    /// Load view from nib.
-    ///
-    /// - Parameters:
-    ///   - name: nib name.
-    ///   - bundle: bundle of nib (default is nil).
-    /// - Returns: optional UIView (if applicable).
     class func loadFromNib(named name: String, bundle: Bundle? = nil) -> UIView? {
         
         return UINib(nibName: name, bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as? UIView
@@ -105,14 +98,7 @@ extension UIView {
         
         subviews.forEach({ $0.removeFromSuperview() })
     }
-        
-    /// Add shadow to view.
-    ///
-    /// - Parameters:
-    ///   - color: shadow color (default is #137992).
-    ///   - radius: shadow radius (default is 3).
-    ///   - offset: shadow offset (default is .zero).
-    ///   - opacity: shadow opacity (default is 0.5).
+
     func addShadow(ofColor color: UIColor = UIColor(red: 0.07, green: 0.47, blue: 0.57, alpha: 1.0),
                    radius: CGFloat = 3,
                    offset: CGSize = .zero,
@@ -144,7 +130,6 @@ extension UIView {
         anchor(top: guide.topAnchor, leading: guide.leadingAnchor, bottom: guide.bottomAnchor, trailing: guide.trailingAnchor, padding: .zero, widthConstant: 0, heightConstant: 0)
     }
     
-    /// Add anchors from any side of the current view into the specified anchors and returns the newly added constraints.
     @discardableResult
     func anchor(
         top: NSLayoutYAxisAnchor? = nil,
@@ -226,9 +211,6 @@ extension UIView {
         anchorCenterYToSuperview()
     }
     
-    /// Search all superviews until a view with the condition is found.
-    ///
-    /// - Parameter predicate: predicate to evaluate on superviews.
     func ancestorView(where predicate: (UIView?) -> Bool) -> UIView? {
         
         if predicate(superview) {
@@ -237,9 +219,6 @@ extension UIView {
         return superview?.ancestorView(where: predicate)
     }
     
-    /// Search all superviews until a view with this class is found.
-    ///
-    /// - Parameter name: class of the view to search.
     func ancestorView<T: UIView>(withClass name: T.Type) -> T? {
         
         return ancestorView(where: { $0 is T }) as? T

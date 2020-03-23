@@ -10,10 +10,40 @@ import Foundation
 
 enum HTTPServiceError: Error {
     
-    case clientError
+    case invalidURL
+    case clientError(Data)
     case serverError
     case unexpectedError
 }
+
+enum HTTPMethod: String {
+    
+    case GET
+    case POST
+}
+
+protocol CSRequest {
+    
+    var urlString: String { get }
+    var method: HTTPMethod { get }
+    var headers: [String: String] { get }
+    var body: Data? { get }
+}
+
+extension CSRequest {
+    
+    func makeRequest() throws -> URLRequest {
+        guard let url = URL(string: urlString) else {
+            throw HTTPServiceError.invalidURL
+        }
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = headers
+        request.httpBody = body
+        request.httpMethod = method.rawValue
+        return request
+    }
+}
+
 
 class HTTPService {
     
@@ -25,27 +55,32 @@ class HTTPService {
         return session
     }()
     
-    func request(_ url: URL, completion: @escaping (Result<Data, HTTPServiceError>) -> Void) {
+    func request(_ request: CSRequest, completion: @escaping (Result<Data, HTTPServiceError>) -> Void) {
         
-        session.dataTask(with: url) { (data, response, error) in
-            
-            guard error == nil, let data = data, let response = response as? HTTPURLResponse else {
+        guard let request = try? request.makeRequest() else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard
+                error == nil,
+                let data = data,
+                let response = response as? HTTPURLResponse
+            else {
                 completion(.failure(.unexpectedError))
                 return
             }
-            
             switch response.statusCode {
             case 200 ..< 300:
                 completion(.success(data))
             case 400 ..< 500:
-                completion(.failure(.clientError))
+                completion(.failure(.clientError(data)))
             case 500 ..< 600:
                 completion(.failure(.serverError))
             default:
                 completion(.failure(.unexpectedError))
             }
-//            debugPrint(response.statusCode)
-            
-        }.resume()
+        }
+        task.resume()
     }
 }

@@ -8,21 +8,17 @@
 
 import Foundation
 
-class APIService {
+class NewsAPIService {
     
-    private var request: HeadlineRequest
+    private var headlineRequest: HeadlineRequest
     
     init(request: HeadlineRequest) {
-        self.request = request
+        self.headlineRequest = request
     }
     
     func executeRequest(completion: @escaping (Result<[Headline], Error>) -> Void) {
         
-        guard let url = request.requestURL else {
-            return
-        }
-        
-        HTTPService.shared.request(url) { (result) in
+        HTTPService.shared.request(headlineRequest) { (result) in
             
             switch result {
             case .failure(let error):

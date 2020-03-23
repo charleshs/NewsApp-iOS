@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct HeadlineRequest {
+struct HeadlineRequest: CSRequest {
     
-    var requestURL: URL? {
+    var urlString: String {
         var params: [String: String] = [
             "country": "tw",
             "apiKey": apiKey,
@@ -20,8 +20,14 @@ struct HeadlineRequest {
         }
         let queryString = makeQueryString(params)
         let urlString = baseUrl + queryString
-        return URL(string: urlString)
+        return urlString
     }
+    
+    let method: HTTPMethod = .GET
+    
+    let headers: [String : String] = [:]
+    
+    var body: Data? = nil
     
     private let baseUrl = "https://newsapi.org/v2/top-headlines?"
     

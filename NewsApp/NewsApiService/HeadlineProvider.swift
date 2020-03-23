@@ -12,7 +12,7 @@ class HeadlineProvider {
     
     private let request: HeadlineRequest
     
-    private let apiService: APIService
+    private let apiService: NewsAPIService
     
     init(category: SubCategory) {
         self.request = .init(category: category)
