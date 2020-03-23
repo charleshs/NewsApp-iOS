@@ -15,27 +15,28 @@ protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get set }
     
     func start()
-    func start(coordinator: Coordinator)
-    func didFinish(coordinator: Coordinator)
-    func removeChildCoordinators()
+    func startChild(_ coordinator: Coordinator)
+    func stop()
+    func stopChild(_ coordinator: Coordinator)
+    func stopChildren()
 }
 
 extension Coordinator {
     
-    func start(coordinator: Coordinator) {
+    func startChild(_ coordinator: Coordinator) {
         self.childCoordinators.append(coordinator)
         coordinator.parentCoordinator = self
         coordinator.start()
     }
-    
-    func didFinish(coordinator: Coordinator) {
+
+    func stopChild(_ coordinator: Coordinator) {
         if let index = self.childCoordinators.firstIndex(where: { $0 === coordinator }) {
             self.childCoordinators.remove(at: index)
         }
     }
     
-    func removeChildCoordinators() {
-        self.childCoordinators.forEach { $0.removeChildCoordinators() }
+    func stopChildren() {
+        self.childCoordinators.forEach { $0.stopChildren() }
         self.childCoordinators.removeAll()
     }
 }

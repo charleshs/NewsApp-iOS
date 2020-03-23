@@ -19,8 +19,22 @@ class HomeCoordinator: Coordinator {
     }
     
     func start() {
-        
         let homeContainerVC = HomeContainerViewController()
+        homeContainerVC.delegate = self
         navigationController.viewControllers = [homeContainerVC]
+    }
+    
+    func stop() {
+        
+    }
+}
+
+extension HomeCoordinator: HomeContainerViewControllerDelegate {
+    
+    func didSelectArticleItem(_ controller: HomeContainerViewController, article: ArticleViewModelProtocol) {
+        
+        let urlString = article.postLink
+        let coordinator = ArticleWebpageCoordinator(navController: navigationController, urlString: urlString)
+        coordinator.startChild(coordinator)
     }
 }

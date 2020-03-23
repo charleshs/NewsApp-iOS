@@ -10,6 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    weak var coordinator: Coordinator?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -17,11 +19,15 @@ class BaseViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view.backgroundColor = .init(white: 0.1, alpha: 1.0)
-        setBackButtonTitle()
+        setBackButtonImage(ImageAsset.navArrowBack.getImage())
     }
     
-    private func setBackButtonTitle(_ title: String = "") {
-        let button = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = button
+    @objc public func back(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    private func setBackButtonImage(_ image: UIImage?) {
+        let barButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(back(_:)))
+        navigationItem.leftBarButtonItem = barButton
     }
 }

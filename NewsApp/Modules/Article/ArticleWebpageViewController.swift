@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class ArticleWebpageViewController: BaseViewController {
-
+    
     private let webView: WKWebView = {
         let configuration = WKWebViewConfiguration()
         let view = WKWebView(frame: .zero, configuration: configuration)
@@ -42,6 +42,10 @@ class ArticleWebpageViewController: BaseViewController {
             return
         }
         webView.load(URLRequest(url: url))
+    }
+    
+    override func back(_ sender: UIBarButtonItem) {
+        coordinator?.stop()
     }
     
     private func encodedString(_ input: String) -> String {

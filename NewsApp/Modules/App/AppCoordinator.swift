@@ -29,6 +29,10 @@ class AppCoordinator: Coordinator {
         window?.makeKeyAndVisible()
         
         let homeCoordinator = HomeCoordinator(navController: self.navigationController)
-        start(coordinator: homeCoordinator)
+        startChild(homeCoordinator)
+    }
+    
+    func stop() {
+        
     }
 }

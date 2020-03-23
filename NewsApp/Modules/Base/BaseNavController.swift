@@ -12,7 +12,6 @@ class BaseNavController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBarHidden(true, animated: false)
         navigationBar.barTintColor = .init(white: 0.1, alpha: 1.0)
         navigationBar.tintColor = .white
     }

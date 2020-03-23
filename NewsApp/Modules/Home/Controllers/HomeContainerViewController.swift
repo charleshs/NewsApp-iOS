@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol HomeContainerViewControllerDelegate: AnyObject {
+    
+    func didSelectArticleItem(_ controller: HomeContainerViewController, article: ArticleViewModelProtocol)
+}
+
 class HomeContainerViewController: BaseViewController {
 
+    weak var delegate: HomeContainerViewControllerDelegate?
+    
     private let bannerGalleryView = UIView()
     private let categoryBrowserView = UIView()
     private let articleListView = UIView()
@@ -123,8 +130,6 @@ extension HomeContainerViewController: CategoryBrowserViewControllerDelegate {
 extension HomeContainerViewController: ArticleListViewControllerDelegate {
     
     func didSelectItem(_ controller: ArticleListViewController, article: ArticleViewModelProtocol) {
-        let urlString = article.postLink
-        let newsArticleVC = ArticleWebpageViewController(urlString: urlString)
-        navigationController?.pushViewController(newsArticleVC, animated: true)
+        delegate?.didSelectArticleItem(self, article: article)
     }
 }
